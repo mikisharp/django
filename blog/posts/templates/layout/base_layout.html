@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>{{title}}</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% block links %}
+{% endblock %}
+</head>
+<body>
+{% block content %}
+{% endblock content %}
+
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

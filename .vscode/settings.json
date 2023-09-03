@@ -1,0 +1,10 @@
+{
+    "files.autoSave": "off",
+    "python.linting.pylintEnabled": true, 
+    "python.jediEnabled": false,
+    "files.associations": {
+        // extension name : html
+        "*.ejs": "html",
+        "*.js": "html"
+    }
+}
