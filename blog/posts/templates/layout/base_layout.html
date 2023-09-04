@@ -4,13 +4,35 @@
 <head>
 <title>{{title}}</title>
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
 {% block links %}
 {% endblock %}
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'posts:home_page' %}">Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'posts:home_page' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'posts:about_page' %}">About</a>
+              </li>
+          
+            </ul>
+          </div>
+        </div>
+      </nav>
 {% block content %}
 {% endblock content %}
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" ></script>
 <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 </body>
 </html>
