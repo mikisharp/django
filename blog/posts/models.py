@@ -14,6 +14,6 @@ class Post(models.Model):
         db_table = 'post'
     
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.title} {self.created_at.strftime('%d-%m-%Y')}"
     
     

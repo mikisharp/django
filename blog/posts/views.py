@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from posts.models import Post
+
 
 # Create your views here.
 def home(request):
+    posts = Post.objects.all()
     #print(request)
     context = {
         'title': 'Home',
-        'data': [1,2,3,4,5],
+        'posts': posts
     }
+    
     return render(request, 'home/landingpage.html', context)
 
 def about(request):
