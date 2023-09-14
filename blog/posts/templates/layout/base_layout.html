@@ -5,9 +5,15 @@
 <title>{{title}}</title>
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  />
 
 {% block links %}
 {% endblock %}
+<style>
+  .font-weight-bold {
+    font-weight: bold !important;
+  }
+</style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -25,6 +31,12 @@
                 <a class="nav-link" href="{% url 'posts:about_page' %}">About</a>
               </li>
           
+            </ul>
+            <ul class="navbar-nav" style="margin-left: auto !important;">
+              <li class="nav-item">
+                <a href="{% url 'posts:create_post' %}" class="btn btn-success btn-sm"> <i class="fa-solid fa-plus"></i> Add Post</a>
+              </li>
+
             </ul>
           </div>
         </div>

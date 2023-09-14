@@ -1,0 +1,47 @@
+{% extends 'layout/base_layout.html' %}
+{% block links %}
+
+<style>
+p{
+    color: blue;
+}
+.image_wrapper {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="image_wrapper">
+            <img src="{{post.main_image.url}}" alt="{{post.title}}">
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="post_description">
+            <h4 class="font-weight-bold">{{post.title}}</h4>
+            <small class="text-muted mt-3">{{post.subject}}</small> <br>
+            <small class="text-black mt-3">Posted at: {{post.created_at}}</small>
+        </div>
+        <div class="post_info mt-3">
+            <h5 class="font-weight-bold">Description</h5>
+            <p class="text-dark">{{post.description}}</p>
+        </div>
+    </div>
+    </div>
+</div> 
+
+{% endblock content %}
+{% block script %}
+{% endblock %}
