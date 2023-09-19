@@ -15,5 +15,10 @@ class Post(models.Model):
     
     def __str__(self):
         return f"{self.title} {self.created_at.strftime('%d-%m-%Y')}"
+    @property 
+    def get_image(self):
+        if self.main_image:
+            return self.main_image.url
+        return 'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg'
     
     
