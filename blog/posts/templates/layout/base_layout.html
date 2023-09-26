@@ -36,9 +36,19 @@
           
             </ul>
             <ul class="navbar-nav" style="margin-left: auto !important;">
+              {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a href="{% url 'posts:create_post' %}" class="btn btn-success btn-sm"> <i class="fa-solid fa-plus"></i> Add Post</a>
               </li>
+              {% else %}
+              <li class="nav-item ">
+                <a href="{% url 'posts:login_page' %}" class="btn btn-success btn-sm mr-3"> <i class="fa-solid fa-user"></i> Login</a>
+              </li>
+              
+              <li class="nav-item mr-3">
+                <a href="{% url 'posts:register_page' %}" class="btn btn-success btn-sm mr-3"> <i class="fa-solid fa-user"></i> Sign up</a>
+              </li>
+              {% endif %}
 
             </ul>
           </div>

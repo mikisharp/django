@@ -19,6 +19,8 @@
 <h1>My First Heading</h1>
 <div class="container py-5">
   <div class="row" m-0>
+    {% if posts %}
+
     {% for post in posts %}
     <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
       <div class="card">
@@ -36,7 +38,8 @@
             <a href="{% url 'posts:post_details' post.id %}">
               <img src="{{post.get_image}}" alt="{{post.title}}"
             /></a>
-          </div>
+          </div> 
+          
           <div class="descriptionn_wrapper pt-3">
             <p class="description">
               {{ post.description|truncatechars:150 }}...
@@ -47,6 +50,12 @@
     </div>
 
     {% endfor %}
+    {%else%}
+    <div class="col-sm-12 d-flex justify-content-center align-items-center">
+      <h4 class="card-title">No Posts</h4>
+    </div>  
+
+    {% endif %}
   </div>
 </div>
 
