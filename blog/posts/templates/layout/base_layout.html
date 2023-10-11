@@ -37,9 +37,17 @@
             </ul>
             <ul class="navbar-nav" style="margin-left: auto !important;">
               {% if request.user.is_authenticated %}
+
               <li class="nav-item">
                 <a href="{% url 'posts:create_post' %}" class="btn btn-success btn-sm"> <i class="fa-solid fa-plus"></i> Add Post</a>
               </li>
+              <li class="nav-item">
+                <a href="{% url 'posts:category_page' %}" class="btn btn-success btn-sm"> <i class="fa-solid fa-plus"></i> Categories</a>
+              </li>
+              <li class="nav-item ">
+                <a href="{% url 'posts:logout_user' %}" class="btn btn-success btn-sm mr-3"> <i class="fa-solid fa-sign-out"></i> Log Out</a>
+              </li>
+              
               {% else %}
               <li class="nav-item ">
                 <a href="{% url 'posts:login_page' %}" class="btn btn-success btn-sm mr-3"> <i class="fa-solid fa-user"></i> Login</a>
@@ -54,6 +62,21 @@
           </div>
         </div>
       </nav>
+      <div class="container">
+        {%if messages %}
+<ul class="messages list-unstyled">
+  {% for message in messages %}
+  <li {% if message.tags %} class="{{ message.tags }}"   {% endif %}>{{ message }}</li>
+ 
+  {% endfor %}
+
+</ul>
+
+{% endif %}
+        
+      </div>
+
+
 {% block content %}
 {% endblock content %}
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

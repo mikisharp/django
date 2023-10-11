@@ -16,4 +16,10 @@ urlpatterns = [
     path('login/', views.login_page, name="login_page"),
     path('register_user/', views.register_user, name="register_user"),
     path('login_user/', views.login_user, name="login_user"),
+    path('logout_user/', views.logout_user, name="logout_user"),
+    path('category_page/', views.category_page, name="category_page"),
+    path('add_category/', views.add_category, name="add_category"),
+    path('edit_category/<int:item_id>', views.edit_category, name="edit_category"),
+    path('delete_category/<int:item_id>', views.delete_category, name="delete_category"),
+    path('api/category/', views.category_serializer),
 ]

@@ -13,7 +13,7 @@
   <div class="row m-0">
     <div class="col-sm-12 col-md-12 col-lg-6 mx-auto">
       <form
-        action="{% url 'posts:login_user' %}"
+        action="{% url 'posts:login_user' %}?next={{request.GET.next}}"
         enctype="multipart/form-data"
         method="post"
       >
